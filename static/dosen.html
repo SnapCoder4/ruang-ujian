@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruang Dosen · Ruang Ujian</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <a href="#utama" class="skip-link">Lewati ke konten</a>
+  <main class="shell" id="utama">
+    <div class="card-head">
+      <div>
+        <h1>Ruang Dosen</h1>
+        <p class="muted" id="sapaan">Memuat…</p>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm" id="btn-sandi" type="button"><span data-icon="key"></span><span>Ganti sandi</span></button>
+        <a class="btn btn-sm btn-primary" href="/editor"><span data-icon="plus"></span><span>Buat ujian / soal</span></a>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <h2 class="row" style="margin:0"><span data-icon="file"></span> Ujian</h2>
+        <div class="field" style="margin:0;min-width:220px">
+          <label for="pilih-ujian" class="sr-only">Pilih ujian</label>
+          <select id="pilih-ujian"></select>
+        </div>
+      </div>
+      <div class="row" style="gap:var(--sp-2)">
+        <a class="btn btn-sm" id="link-peringatan" href="/peringatan"><span data-icon="alert"></span><span>Log peringatan</span></a>
+        <a class="btn btn-sm" id="link-editor" href="/editor"><span data-icon="edit"></span><span>Kelola soal</span></a>
+        <a class="btn btn-sm" href="#audit" id="link-audit"><span data-icon="shield"></span><span>Catatan aktivitas</span></a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="row"><span data-icon="users"></span> Status Mahasiswa</h2>
+      <div id="tabel-status" aria-live="polite"><p class="muted">Pilih ujian untuk melihat status.</p></div>
+    </section>
+
+    <section class="card" id="audit">
+      <h2 class="row"><span data-icon="shield"></span> Catatan Aktivitas</h2>
+      <div id="tabel-audit" aria-live="polite"><p class="muted">Memuat…</p></div>
+    </section>
+  </main>
+
+  <dialog id="dlg-nilai">
+    <h3>Ubah Nilai</h3>
+    <p class="muted" id="nilai-info"></p>
+    <form id="form-nilai" novalidate>
+      <div class="field">
+        <label for="nilai-baru">Nilai baru (0–100) <span class="req">*</span></label>
+        <input class="input num" type="number" id="nilai-baru" min="0" max="100" step="0.5" required>
+      </div>
+      <div class="field">
+        <label for="nilai-alasan">Alasan perubahan <span class="req">*</span></label>
+        <textarea id="nilai-alasan" required minlength="5" placeholder="Mis. koreksi soal nomor 4 yang ambigu"></textarea>
+        <span class="help">Alasan tercatat di catatan aktivitas.</span>
+      </div>
+      <p class="error-text" id="nilai-error" role="alert" hidden><span data-icon="alert"></span><span id="nilai-error-teks"></span></p>
+      <div class="row between" style="margin-top:var(--sp-5)">
+        <button class="btn" type="button" id="nilai-batal">Batal</button>
+        <button class="btn btn-primary" type="submit">Simpan nilai</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-sandi">
+    <h3>Ganti Sandi</h3>
+    <form id="form-sandi" novalidate>
+      <div class="field">
+        <label for="sandi-lama">Sandi lama <span class="req">*</span></label>
+        <input class="input" type="password" id="sandi-lama" autocomplete="current-password" required>
+      </div>
+      <div class="field">
+        <label for="sandi-baru">Sandi baru <span class="req">*</span></label>
+        <input class="input" type="password" id="sandi-baru" autocomplete="new-password" minlength="8" required>
+        <span class="help">Minimal 8 karakter.</span>
+      </div>
+      <p class="error-text" id="sandi-error" role="alert" hidden><span data-icon="alert"></span><span id="sandi-error-teks"></span></p>
+      <div class="row between" style="margin-top:var(--sp-5)">
+        <button class="btn" type="button" id="sandi-batal">Batal</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/js/dosen.js"></script>
+</body>
+</html>

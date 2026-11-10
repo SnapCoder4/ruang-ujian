@@ -1,0 +1,131 @@
+/* Ruang Ujian — token desain (warna, tipografi, spasi, motion) */
+
+:root {
+  color-scheme: light dark;
+
+  /* Tipografi */
+  --font-judul: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-isi: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.15rem;
+  --fs-xl: 1.4rem;
+  --fs-2xl: 1.85rem;
+  --fs-3xl: 2.5rem;
+
+  /* Spasi (rhythm 4px) */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-8: 3rem;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  --ring-width: 3px;
+  --touch: 44px;
+
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Warna — mode terang (default) */
+  --bg: #f4f6fb;
+  --bg-grid: #e7ecf7;
+  --surface: #ffffff;
+  --surface-2: #f1f5fd;
+  --fg: #0f1729;
+  --fg-muted: #4a5670;
+  --border: #d9e1f2;
+  --border-strong: #b9c6e4;
+
+  --primary: #2348c9;
+  --primary-hover: #1c3bab;
+  --on-primary: #ffffff;
+  --primary-soft: #e4eaff;
+
+  --accent: #b4530a;
+  --accent-soft: #fbe8d6;
+
+  --success: #1f7a4d;
+  --success-soft: #d9f2e4;
+  --warning: #9a6a00;
+  --warning-soft: #fbeeca;
+  --danger: #c02637;
+  --danger-soft: #fbe0e3;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 41, 0.08);
+  --shadow: 0 6px 20px rgba(15, 23, 41, 0.1);
+  --shadow-lg: 0 18px 48px rgba(15, 23, 41, 0.16);
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --bg-grid: #141b31;
+  --surface: #151c30;
+  --surface-2: #1d2740;
+  --fg: #eaf0ff;
+  --fg-muted: #a9b6d6;
+  --border: #2a3657;
+  --border-strong: #3b4a72;
+
+  --primary: #7e9bff;
+  --primary-hover: #97afff;
+  --on-primary: #0b1020;
+  --primary-soft: #1e2b52;
+
+  --accent: #f0a765;
+  --accent-soft: #3a2a18;
+
+  --success: #5fd49a;
+  --success-soft: #16311f;
+  --warning: #f0c660;
+  --warning-soft: #332a12;
+  --danger: #ff8591;
+  --danger-soft: #3a1820;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 52px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1020;
+    --bg-grid: #141b31;
+    --surface: #151c30;
+    --surface-2: #1d2740;
+    --fg: #eaf0ff;
+    --fg-muted: #a9b6d6;
+    --border: #2a3657;
+    --border-strong: #3b4a72;
+
+    --primary: #7e9bff;
+    --primary-hover: #97afff;
+    --on-primary: #0b1020;
+    --primary-soft: #1e2b52;
+
+    --accent: #f0a765;
+    --accent-soft: #3a2a18;
+
+    --success: #5fd49a;
+    --success-soft: #16311f;
+    --warning: #f0c660;
+    --warning-soft: #332a12;
+    --danger: #ff8591;
+    --danger-soft: #3a1820;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 20px 52px rgba(0, 0, 0, 0.6);
+  }
+}

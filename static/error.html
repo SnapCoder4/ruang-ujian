@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terjadi Kesalahan · Ruang Ujian</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <main class="shell shell-narrow" id="utama" style="min-height:100dvh;display:grid;place-content:center;text-align:center">
+    <div class="card">
+      <div style="display:grid;place-items:center;margin-bottom:var(--sp-4)">
+        <span class="brand-mark icon-lg" style="width:56px;height:56px;background:var(--danger)" data-icon="alert"></span>
+      </div>
+      <h1 id="judul">Terjadi kesalahan</h1>
+      <p class="muted" id="pesan">Halaman tidak dapat ditampilkan.</p>
+      <div class="row" style="justify-content:center;margin-top:var(--sp-4)">
+        <a class="btn" href="/"><span data-icon="back"></span><span>Ke halaman masuk</span></a>
+        <button class="btn btn-primary" onclick="history.back()">Kembali</button>
+      </div>
+    </div>
+  </main>
+  <script type="module">
+    import { mountIcons } from "/js/icons.js";
+    import { initThemeToggle } from "/js/theme.js";
+    mountIcons();
+    initThemeToggle();
+    const kode = new URLSearchParams(location.search).get("kode");
+    if (kode === "403") {
+      document.getElementById("judul").textContent = "Akses ditolak";
+      document.getElementById("pesan").textContent = "Anda tidak memiliki hak untuk membuka halaman ini. Periksa kembali peran akun Anda.";
+    }
+  </script>
+</body>
+</html>

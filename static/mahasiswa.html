@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beranda · Ruang Ujian</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <a href="#utama" class="skip-link">Lewati ke konten</a>
+  <main class="shell" id="utama">
+    <div class="card-head">
+      <div>
+        <h1>Beranda Mahasiswa</h1>
+        <p class="muted" id="sapaan">Memuat…</p>
+      </div>
+      <button class="btn btn-sm" id="btn-sandi" type="button"><span data-icon="key"></span><span>Ganti sandi</span></button>
+    </div>
+
+    <section class="stack" aria-labelledby="judul-jadwal">
+      <h2 id="judul-jadwal" class="row"><span data-icon="calendar"></span> Jadwal Ujian</h2>
+      <div id="daftar-ujian" class="grid-cards" aria-live="polite">
+        <div class="card muted">Memuat jadwal…</div>
+      </div>
+    </section>
+
+    <section class="stack" aria-labelledby="judul-nilai" style="margin-top:var(--sp-6)">
+      <h2 id="judul-nilai" class="row"><span data-icon="award"></span> Nilai Saya</h2>
+      <div class="card" id="kartu-nilai"><p class="muted">Memuat nilai…</p></div>
+    </section>
+  </main>
+
+  <dialog id="dlg-sandi">
+    <h3>Ganti Sandi</h3>
+    <form id="form-sandi" novalidate>
+      <div class="field">
+        <label for="sandi-lama">Sandi lama <span class="req">*</span></label>
+        <input class="input" type="password" id="sandi-lama" autocomplete="current-password" required>
+      </div>
+      <div class="field">
+        <label for="sandi-baru">Sandi baru <span class="req">*</span></label>
+        <input class="input" type="password" id="sandi-baru" autocomplete="new-password" minlength="8" required>
+        <span class="help">Minimal 8 karakter.</span>
+      </div>
+      <p class="error-text" id="sandi-error" role="alert" hidden><span data-icon="alert"></span><span id="sandi-error-teks"></span></p>
+      <div class="row between" style="margin-top:var(--sp-5)">
+        <button class="btn" type="button" id="sandi-batal">Batal</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/js/mahasiswa.js"></script>
+</body>
+</html>

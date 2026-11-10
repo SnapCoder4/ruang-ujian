@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruang Ujian · Ruang Ujian</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <style>
+    .exam-grid { display: grid; grid-template-columns: 1fr 260px; gap: var(--sp-5); align-items: start; }
+    .exam-aside { position: sticky; top: 80px; display: grid; gap: var(--sp-4); }
+    .q-body { font-size: var(--fs-lg); font-weight: 600; font-family: var(--font-judul); margin-bottom: var(--sp-5); }
+    .options { display: grid; gap: var(--sp-3); }
+    .exam-foot { display: flex; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-5); }
+    @media (max-width: 860px) {
+      .exam-grid { grid-template-columns: 1fr; }
+      .exam-aside { position: static; order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell" id="utama">
+    <div id="muat" class="card muted">Memuat ruang ujian…</div>
+
+    <div id="ruang" hidden>
+      <div class="card-head">
+        <div>
+          <h1 id="judul-ujian"></h1>
+          <p class="muted" id="sub-ujian"></p>
+        </div>
+        <div class="timer" id="timer" role="timer" aria-live="off">
+          <span data-icon="clock"></span><span id="timer-teks">--:--</span>
+        </div>
+      </div>
+
+      <div class="exam-grid">
+        <section class="card" aria-live="polite">
+          <div class="row between">
+            <span class="badge badge-info" id="q-label">Soal</span>
+            <span class="muted" id="q-progress"></span>
+          </div>
+          <p class="q-body" id="q-body" style="margin-top:var(--sp-4)"></p>
+          <div class="options" id="q-options" role="radiogroup" aria-label="Pilihan jawaban"></div>
+          <div class="exam-foot">
+            <button class="btn" id="btn-prev"><span data-icon="back"></span><span>Sebelumnya</span></button>
+            <button class="btn" id="btn-next"><span>Berikutnya</span></button>
+          </div>
+        </section>
+
+        <aside class="exam-aside">
+          <div class="card">
+            <h3 style="font-size:var(--fs-base)">Navigasi soal</h3>
+            <div class="qnav" id="qnav"></div>
+            <p class="help row" style="margin-top:var(--sp-3)">
+              <span class="badge badge-success"><span data-icon="check"></span>Terisi</span>
+              <span class="badge badge-neutral">Belum</span>
+            </p>
+            <p class="help" id="ringkas"></p>
+          </div>
+          <button class="btn btn-primary" id="btn-kirim" style="width:100%"><span data-icon="send"></span><span>Kirim ujian</span></button>
+        </aside>
+      </div>
+    </div>
+
+    <div id="gagal" class="card error-text" hidden><span data-icon="alert"></span><span id="gagal-teks"></span></div>
+  </main>
+
+  <script type="module" src="/js/ujian.js"></script>
+</body>
+</html>

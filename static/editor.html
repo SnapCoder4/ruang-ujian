@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor Soal · Ruang Ujian</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <style>
+    .opt-edit { display: grid; grid-template-columns: 40px 1fr auto; gap: var(--sp-3); align-items: center; margin-bottom: var(--sp-2); }
+    .opt-edit .bubble { width: 36px; height: 36px; }
+    .opt-edit .pilih-benar { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--touch); padding: 0 var(--sp-3); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <a href="#utama" class="skip-link">Lewati ke konten</a>
+  <main class="shell" id="utama">
+    <div class="card-head">
+      <div>
+        <h1 class="row"><span data-icon="edit"></span> Editor Soal &amp; Ujian</h1>
+        <p class="muted">Buat ujian dan kelola bank soal.</p>
+      </div>
+      <a class="btn btn-sm" href="/dosen"><span data-icon="back"></span><span>Ke Ruang Dosen</span></a>
+    </div>
+
+    <section class="card" aria-labelledby="h-buat">
+      <h2 id="h-buat" class="row"><span data-icon="plus"></span> Buat Ujian Baru</h2>
+      <form id="form-ujian" novalidate>
+        <div class="row" style="gap:var(--sp-4);align-items:flex-start">
+          <div class="field" style="flex:2;min-width:220px">
+            <label for="u-judul">Judul ujian <span class="req">*</span></label>
+            <input class="input" id="u-judul" required minlength="3">
+          </div>
+          <div class="field" style="flex:1;min-width:160px">
+            <label for="u-course">Mata kuliah <span class="req">*</span></label>
+            <select id="u-course" required></select>
+          </div>
+        </div>
+        <div class="row" style="gap:var(--sp-4);align-items:flex-start">
+          <div class="field" style="flex:1;min-width:160px">
+            <label for="u-mulai">Mulai <span class="req">*</span></label>
+            <input class="input" type="datetime-local" id="u-mulai" required>
+          </div>
+          <div class="field" style="flex:1;min-width:160px">
+            <label for="u-selesai">Selesai <span class="req">*</span></label>
+            <input class="input" type="datetime-local" id="u-selesai" required>
+          </div>
+          <div class="field" style="flex:1;min-width:120px">
+            <label for="u-durasi">Durasi (menit) <span class="req">*</span></label>
+            <input class="input num" type="number" id="u-durasi" min="5" max="300" value="60" required>
+          </div>
+        </div>
+        <label class="row" style="gap:var(--sp-2)"><input type="checkbox" id="u-publish" style="width:auto;min-height:auto"> Langsung publikasikan</label>
+        <p class="error-text" id="u-error" role="alert" hidden><span data-icon="alert"></span><span id="u-error-teks"></span></p>
+        <button class="btn btn-primary" type="submit" style="margin-top:var(--sp-4)"><span data-icon="check"></span><span>Simpan ujian</span></button>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="h-bank">
+      <div class="card-head">
+        <h2 id="h-bank" class="row" style="margin:0"><span data-icon="list"></span> Bank Soal</h2>
+        <div class="field" style="margin:0;min-width:220px">
+          <label for="pilih-ujian" class="sr-only">Pilih ujian</label>
+          <select id="pilih-ujian"></select>
+        </div>
+      </div>
+      <div id="daftar-soal" aria-live="polite"><p class="muted">Pilih ujian.</p></div>
+      <button class="btn" id="btn-tambah-soal" style="margin-top:var(--sp-4)"><span data-icon="plus"></span><span>Tambah soal</span></button>
+    </section>
+  </main>
+
+  <dialog id="dlg-soal">
+    <h3 id="soal-judul">Tambah Soal</h3>
+    <form id="form-soal" novalidate>
+      <div class="row" style="gap:var(--sp-4);align-items:flex-start">
+        <div class="field" style="flex:0 0 100px">
+          <label for="s-nomor">Nomor <span class="req">*</span></label>
+          <input class="input num" type="number" id="s-nomor" min="1" max="200" required>
+        </div>
+        <div class="field" style="flex:1">
+          <label for="s-body">Pertanyaan <span class="req">*</span></label>
+          <textarea id="s-body" required minlength="5"></textarea>
+        </div>
+      </div>
+      <fieldset style="border:1px solid var(--border);border-radius:var(--radius);padding:var(--sp-4)">
+        <legend style="padding:0 var(--sp-2)">Pilihan jawaban (tandai satu yang benar)</legend>
+        <div id="opt-list"></div>
+      </fieldset>
+      <p class="error-text" id="s-error" role="alert" hidden><span data-icon="alert"></span><span id="s-error-teks"></span></p>
+      <div class="row between" style="margin-top:var(--sp-5)">
+        <button class="btn" type="button" id="s-batal">Batal</button>
+        <button class="btn btn-primary" type="submit">Simpan soal</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/js/editor.js"></script>
+</body>
+</html>
