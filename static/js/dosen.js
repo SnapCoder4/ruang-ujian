@@ -20,7 +20,7 @@ async function muatUjian() {
     return;
   }
   pilihUjian.innerHTML = list.map((e) =>
-    `<option value="${e.id}">${esc(e.course_code)} — ${esc(e.title)} (${e.jumlah_soal} soal)</option>`
+    `<option value="${e.id}">${esc(e.course_code)} - ${esc(e.title)} (${e.jumlah_soal} soal)</option>`
   ).join("");
   ujianAktif = list[0].id;
   sinkronTautan();
@@ -64,7 +64,7 @@ async function muatStatus() {
                   : `<span class="muted">0</span>`}</td>
               <td>${s.session_id
                   ? `<button class="btn btn-sm" data-nilai="${s.session_id}" data-nama="${esc(s.full_name)}" data-skor="${s.score ?? ""}">${ICONS.edit}<span>Ubah nilai</span></button>`
-                  : `<span class="muted">—</span>`}</td>
+                  : `<span class="muted">-</span>`}</td>
             </tr>`).join("")}
         </tbody>
       </table></div>`;
@@ -126,7 +126,7 @@ document.getElementById("form-nilai").addEventListener("submit", async (e) => {
   const score = parseFloat(document.getElementById("nilai-baru").value);
   const alasan = document.getElementById("nilai-alasan").value.trim();
   if (isNaN(score) || score < 0 || score > 100 || alasan.length < 5) {
-    document.getElementById("nilai-error-teks").textContent = "Isi nilai 0–100 dan alasan minimal 5 karakter.";
+    document.getElementById("nilai-error-teks").textContent = "Isi nilai 0-100 dan alasan minimal 5 karakter.";
     errBox.hidden = false;
     return;
   }

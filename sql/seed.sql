@@ -1,4 +1,4 @@
--- Ruang Ujian — data awal fiktif
+-- Ruang Ujian - data awal fiktif
 -- Semua akun memakai sandi: password123
 
 INSERT INTO users (id, username, password_hash, full_name, role, nim_nip) VALUES

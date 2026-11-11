@@ -1,4 +1,4 @@
-# ERD — Ruang Ujian
+# ERD - Ruang Ujian
 
 Entity Relationship Diagram basis data sistem ujian online.
 

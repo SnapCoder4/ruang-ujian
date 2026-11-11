@@ -1,4 +1,4 @@
-# Checklist Evaluasi OWASP Top 10:2025 — Ruang Ujian
+# Checklist Evaluasi OWASP Top 10:2025 - Ruang Ujian
 
 Evaluasi keamanan dijalankan di localhost. Fokus utama dua risiko tugas:
 **kebocoran soal/kunci jawaban** dan **manipulasi nilai**.

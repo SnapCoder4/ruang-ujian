@@ -1,4 +1,4 @@
-/* Ruang Ujian — token desain (warna, tipografi, spasi, motion) */
+/* Ruang Ujian - token desain (warna, tipografi, spasi, motion) */
 
 :root {
   color-scheme: light dark;
@@ -38,7 +38,7 @@
   --dur-slow: 320ms;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
-  /* Warna — mode terang (default) */
+  /* Warna - mode terang (default) */
   --bg: #f4f6fb;
   --bg-grid: #e7ecf7;
   --surface: #ffffff;

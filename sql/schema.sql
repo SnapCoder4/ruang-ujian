@@ -1,4 +1,4 @@
--- Ruang Ujian — skema database PostgreSQL
+-- Ruang Ujian - skema database PostgreSQL
 -- Jalankan: psql -U ruang_ujian -d ruang_ujian -f sql/schema.sql
 
 DROP TABLE IF EXISTS sessions, audit_logs, warning_logs, answers, exam_sessions,

@@ -1,4 +1,4 @@
-# Pengujian Fungsional (Blackbox) — Ruang Ujian
+# Pengujian Fungsional (Blackbox) - Ruang Ujian
 
 Kolom **Hasil** dikosongkan untuk diisi saat pelaksanaan pengujian.
 
@@ -22,7 +22,7 @@ Kolom **Hasil** dikosongkan untuk diisi saat pelaksanaan pengujian.
 | F-09 | Lihat jadwal ujian | buka beranda | Daftar ujian terpublikasi tampil | |
 | F-10 | Mulai ujian | klik "Mulai ujian" | Masuk ruang ujian, timer berjalan | |
 | F-11 | Lanjutkan ujian berjalan | mulai lagi ujian sama | Kembali ke sesi yang sama | |
-| F-12 | Pilih jawaban | klik gelembung A–D | Jawaban tersimpan, navigasi menandai terisi | |
+| F-12 | Pilih jawaban | klik gelembung A-D | Jawaban tersimpan, navigasi menandai terisi | |
 | F-13 | Navigasi soal | klik nomor di panel | Pindah ke soal terkait | |
 | F-14 | Kirim ujian | klik "Kirim ujian" | Dialog konfirmasi, lalu nilai muncul | |
 | F-15 | Timer habis | tunggu 00:00 | Jawaban terkirim otomatis | |

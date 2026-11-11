@@ -15,7 +15,7 @@ let soalEdit = null; // null = tambah, angka = id soal
 async function muatCourses() {
   const list = await api("/api/dosen/courses");
   document.getElementById("u-course").innerHTML = list.map((c) =>
-    `<option value="${c.id}">${esc(c.code)} — ${esc(c.name)}</option>`
+    `<option value="${c.id}">${esc(c.code)} - ${esc(c.name)}</option>`
   ).join("");
 }
 
@@ -64,7 +64,7 @@ async function muatUjian() {
     return;
   }
   pilihUjian.innerHTML = list.map((e) =>
-    `<option value="${e.id}">${esc(e.course_code)} — ${esc(e.title)}</option>`
+    `<option value="${e.id}">${esc(e.course_code)} - ${esc(e.title)}</option>`
   ).join("");
   const params = new URLSearchParams(location.search);
   ujianAktif = params.get("ujian") || list[0].id;

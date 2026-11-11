@@ -12,7 +12,7 @@ Judul proyek: *Mengamankan Aplikasi Ujian Online dari Kebocoran Soal dan Manipul
   tersimpan otomatis, kirim), lihat nilai dan rincian, ganti sandi.
 - **Dosen:** buat/ubah ujian, kelola bank soal, pantau status mahasiswa, ubah nilai
   manual dengan alasan, lihat log peringatan, lihat catatan aktivitas, ganti sandi.
-- Satu form login — peran ditentukan server.
+- Satu form login, peran ditentukan server.
 - Mode terang/gelap, responsif sampai lebar HP, ikon SVG, motif lembar jawaban (LJK).
 
 ## Prasyarat
@@ -87,7 +87,7 @@ docs/              # ERD, use case, uji fungsional, checklist OWASP
 
 ## Dokumen pendukung (folder `docs/`)
 
-- `ERD.md` — Entity Relationship Diagram (Mermaid)
-- `USECASE.md` — Use case diagram (Mermaid)
-- `UJI_FUNGSIONAL.md` — rencana uji blackbox
-- `CHECKLIST_OWASP.md` — checklist evaluasi OWASP Top 10:2025
+- `ERD.md` - Entity Relationship Diagram (Mermaid)
+- `USECASE.md` - Use case diagram (Mermaid)
+- `UJI_FUNGSIONAL.md` - rencana uji blackbox
+- `CHECKLIST_OWASP.md` - checklist evaluasi OWASP Top 10:2025

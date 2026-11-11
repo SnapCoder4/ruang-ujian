@@ -6,7 +6,20 @@
   <title>Masuk · Ruang Ujian</title>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
   <style>
+    .login-wrap { --font-judul: "Plus Jakarta Sans", system-ui, sans-serif; --font-isi: "Plus Jakarta Sans", system-ui, sans-serif; font-family: var(--font-isi); font-size: 1.125rem; }
+    .login-wrap h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1.12; max-width: 16ch; }
+    .login-wrap h2 { font-size: 2.1rem; }
+    .login-wrap .lead { font-size: 1.25rem; line-height: 1.6; max-width: 44ch; }
+    .login-wrap .field label { font-size: 1rem; }
+    .login-wrap .input { font-size: 1.125rem; min-height: 52px; }
+    .login-wrap .btn { font-size: 1.125rem; min-height: 52px; }
+    .login-wrap .error-text, .login-wrap .help { font-size: 1rem; }
+    .login-card { width: min(460px, 100%); }
+    .login-brand { display: flex; align-items: center; gap: var(--sp-3); font-weight: 800; font-size: 1.6rem; }
+    .login-brand svg { width: 48px; height: 48px; flex-shrink: 0; }
     .login-wrap { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100dvh; }
     .login-side {
       background: var(--primary); color: var(--on-primary);
@@ -14,8 +27,6 @@
     }
     .login-side h1 { color: var(--on-primary); font-size: var(--fs-3xl); max-width: 14ch; }
     .login-side .lead { color: color-mix(in srgb, var(--on-primary) 86%, transparent); max-width: 40ch; }
-    .login-side .ljk-deco .dot { border-color: color-mix(in srgb, var(--on-primary) 55%, transparent); }
-    .login-side .ljk-deco .dot.fill { background: var(--on-primary); border-color: var(--on-primary); }
     .login-main { display: grid; place-items: center; padding: var(--sp-6) var(--sp-4); }
     .login-card { width: min(400px, 100%); }
     .login-top { display: flex; justify-content: flex-end; margin-bottom: var(--sp-5); }
@@ -31,15 +42,18 @@
   <a href="#form-masuk" class="skip-link">Lewati ke formulir masuk</a>
   <div class="login-wrap">
     <aside class="login-side">
-      <div class="brand"><span class="brand-mark" data-icon="logo"></span> <span style="font-size:var(--fs-lg)">Ruang Ujian</span></div>
+      <div class="login-brand">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect width="48" height="48" rx="13" fill="currentColor" fill-opacity=".18"/>
+          <rect x="12" y="9" width="24" height="30" rx="4" stroke="currentColor" stroke-width="2.6"/>
+          <path d="M18 19l3 3 5-6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 29h12M18 34h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span>Ruang Ujian</span>
+      </div>
       <div>
-        <h1>Lembar jawaban, dibawa ke layar.</h1>
-        <p class="lead">Sistem ujian online kampus. Masuk dengan akun yang diberikan kampus — peran Anda dikenali otomatis.</p>
-        <div class="ljk-deco" aria-hidden="true" style="margin-top:var(--sp-6)">
-          <div class="ljk-line"><span class="dot fill"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="ljk-line"><span class="dot"></span><span class="dot"></span><span class="dot fill"></span><span class="dot"></span></div>
-          <div class="ljk-line"><span class="dot"></span><span class="dot fill"></span><span class="dot"></span><span class="dot"></span></div>
-        </div>
+        <h1>Ujian online kampus.</h1>
+        <p class="lead">Masuk dengan akun yang diberikan kampus. Peran Anda dikenali otomatis.</p>
       </div>
       <p class="lead" style="font-size:var(--fs-sm)">Lingkungan latihan. Seluruh data bersifat fiktif.</p>
     </aside>

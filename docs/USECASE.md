@@ -1,4 +1,4 @@
-# Use Case Diagram — Ruang Ujian
+# Use Case Diagram - Ruang Ujian
 
 Dua aktor: **Mahasiswa** dan **Dosen**. Peran ditentukan server berdasarkan akun.
 
