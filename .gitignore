@@ -5,3 +5,4 @@ venv/
 .env
 .claude/
 design-system/
+KERENTANAN_RAHASIA.md
